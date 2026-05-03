@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
+import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { connectDB } from "./src/config/db.js";
@@ -30,10 +31,14 @@ app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/users", userRoutes);
 
 const clientDist = path.join(__dirname, "..", "dist");
+const clientIndex = path.join(clientDist, "index.html");
 app.use(express.static(clientDist));
 app.get("*", (req, res, next) => {
   if (req.path.startsWith("/api")) return next();
-  res.sendFile(path.join(clientDist, "index.html"));
+  if (!fs.existsSync(clientIndex)) {
+    return res.status(503).send("Frontend build is missing. Run npm run build before starting the server.");
+  }
+  res.sendFile(clientIndex);
 });
 
 app.use(notFound);

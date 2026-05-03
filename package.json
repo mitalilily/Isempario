@@ -10,6 +10,7 @@
     "client": "vite --host 0.0.0.0",
     "dev:web": "vite --host 0.0.0.0",
     "build": "vite build",
+    "prestart": "npm run build",
     "start": "node server/index.js"
   },
   "keywords": [
@@ -24,6 +25,7 @@
   "license": "MIT",
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
@@ -32,16 +34,15 @@
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^1.14.0",
     "mongoose": "^8.9.2",
+    "postcss": "^8.4.49",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.0.7",
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.20",
     "concurrently": "^9.1.0",
-    "nodemon": "^3.1.9",
-    "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.17",
-    "vite": "^6.0.7"
+    "nodemon": "^3.1.9"
   }
 }
