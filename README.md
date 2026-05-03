@@ -247,6 +247,23 @@ Railway uses `railway.json`:
 }
 ```
 
+### Render Deployment
+
+On Render, create a **Web Service**, not a Static Site.
+
+Use these settings:
+
+```txt
+Environment: Node
+Root Directory: leave blank
+Build Command: npm ci && npm run build
+Start Command: npm start
+```
+
+If Render shows a `Publish Directory` field, you selected **Static Site**. Delete that service and create a **Web Service** instead.
+
+See [RENDER_DEPLOYMENT.md](RENDER_DEPLOYMENT.md) for the full Render troubleshooting steps.
+
 ---
 
 ## API Routes
