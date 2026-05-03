@@ -4,13 +4,15 @@
   "description": "Isempario, a MERN team task management application with React, Express, MongoDB, JWT authentication, Tailwind CSS, and Framer Motion.",
   "type": "module",
   "main": "server/index.js",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon server/index.js",
     "client": "vite --host 0.0.0.0",
     "dev:web": "vite --host 0.0.0.0",
     "build": "vite build",
-    "prestart": "npm run build",
     "start": "node server/index.js"
   },
   "keywords": [

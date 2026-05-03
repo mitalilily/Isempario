@@ -3,11 +3,11 @@ services:
     name: isempario
     env: node
     plan: free
-    buildCommand: npm install && npm run build
+    buildCommand: npm ci && npm run build
     startCommand: npm start
     envVars:
       - key: NODE_VERSION
-        value: 24
+        value: 20
       - key: MONGO_URI
         sync: false
       - key: JWT_SECRET
